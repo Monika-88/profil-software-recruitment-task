@@ -3,7 +3,7 @@
 
 ## Main tasks:  
 
-- [ ] loading data from persons.json file
+- [x] loading data from persons.json file
 - [ ] processing data with given requirements 
 - [ ] saving data to database
 - [ ] reading and processing data from database
