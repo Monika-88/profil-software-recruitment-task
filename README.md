@@ -4,7 +4,7 @@
 ## Main tasks:  
 
 - [x] loading data from persons.json file
-- [ ] processing data with given requirements 
+- [x] processing data with given requirements 
 - [ ] saving data to database
 - [ ] reading and processing data from database
 - [ ] displaying data in the right way (with the given reqs)
