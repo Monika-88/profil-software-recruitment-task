@@ -13,7 +13,10 @@
 ### Side tasks: 
 *(required but there is no need to make tasks chronologically)*
 
-- [ ] Command line interface 
+- [ ] command line interface 
+    - [x] learn argparse basics 
+    - [x] test gathered knowledge in exercise task
+    - [ ] implement fully functional CLI with given reqs
 
 
 ### Bonus tasks:
