@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
 import json
 from datetime import datetime, date
 from pathlib import Path
-import argparse
 
 
 # verify whether a given year is a leap year
@@ -59,43 +57,23 @@ def drop_picture(person):
         pass
 
 
-# Get relative path
-main_path = Path(__file__).parent
-# Add file name to main_path
-file_path = main_path / "persons.json"
+def get_people():
+    # Get relative path
+    main_path = Path(__file__).parent
+    # Add file name to main_path
+    file_path = main_path / "persons.json"
 
-# Open file as f using file_path
-with open(file_path, encoding='utf-8') as f:
-    # save data from json file to
-    json_data = json.load(f)
+    # Open file as f using file_path
+    with open(file_path, encoding='utf-8') as f:
+        # save data from json file to
+        json_data = json.load(f)
 
-# get list of people NOT persons :)
+    # get list of people NOT persons :)
 
-people = json_data.get('results')
+    people = json_data.get('results')
 
-# for person in people:
-#     person['dtb'] = get_days_to_birthday(person)
-#     person['phone'] = drop_phone_special_chars(person)
-#     drop_picture(person)
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(
-        description="Processing data with given requirements"
-    )
-    parser.add_argument('-d', '--date', action='store_true')
-    parser.add_argument('-t', '--telephone', action='store_true')
-    args = parser.parse_args()
-
-    if args.date:
-        print("Days to upcoming birthday")
-        first_person = people[0]
-        first_person_birthday = get_days_to_birthday(first_person)
-        print(first_person_birthday)
-        first_person['dtb'] = first_person_birthday
-        print(first_person)
-    elif args.telephone:
-        print("The list of the telephones (only numeric)")
-        for person in people[0:10]:
-            print(drop_phone_special_chars(person))
-    else:
-        print("Please try again")
+    for person in people:
+        person['dtb'] = get_days_to_birthday(person)
+        person['phone'] = drop_phone_special_chars(person)
+        drop_picture(person)
+    return people
